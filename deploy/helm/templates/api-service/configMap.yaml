@@ -19,7 +19,7 @@ data:
   {{- if .Values.redis.auth.enabled }}
   LOWCODER_REDIS_URL: "redis://{{ $redisPassword }}@{{ $name }}-redis-master.{{ $nameSpace }}.svc.cluster.local:6379"
   {{- else }}
-  LOWCODER_REDIS_URL: "redis://{{ $name }}-redis-master.{{ $nameSpace }}.svc.cluster.local:6379"
+  LOWCODER_REDIS_URL: "redis://{{ .Release.Name }}-redis-master.{{ $nameSpace }}.svc.cluster.local:6379"
   {{- end }}
   {{- else }}
   {{- if .Values.redis.auth.enabled }}
